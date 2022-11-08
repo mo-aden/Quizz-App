@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #d0ebff;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+}
+
+.container {
+  width: 70%;
+  margin: 20rem auto;
+  border: 0.1rem solid black;
+  padding: 1.2rem 2.4rem;
+}
+
+.primary-heading {
+  font-size: 4.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.game-description {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 2.4rem;
+}
+
+.game-cta {
+  margin-bottom: 2.4rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  text-decoration: none;
+  border-radius: 9px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+  margin-right: 4.4rem;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* Quizz Page  */
+
+.game h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 4.8rem;
+}
+
+.info-prefix {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.heading-info {
+  font-size: 2.4rem;
+  padding: 2.4rem;
+  background-color: #74c0fc;
+  border-radius: 1.2rem;
+  color: #fff;
+}
+.option-container {
+  display: flex;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border: 0.1rem solid #74c0fc;
+  background-color: #fff;
+}
+
+.option-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 3px #74c0fc;
+  transition: all 0.3s;
+}
+
+.option-prefix {
+  padding: 1.2rem 2.4rem;
+  background-color: #74c0fc;
+  color: #fff;
+}
+
+.option-text {
+  padding: 1.6rem;
+  width: 100%;
+  text-align: left;
+}
+
+.answer-text {
+  font-size: 2rem;
+  width: 100%;
+  /* text-align: left; */
+  margin: 3.4rem 0;
+  background-color: #74c0fc;
+  padding: 1.2rem 2.4rem;
+}
+
+/* style error selection  */
+.correct {
+  background-color: #28a745;
+}
+
+.incorrect {
+  background-color: #dc3545;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Quizzes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="game">
+        <div class="quiz-info">
+          <div class="info-item">
+            <p class="info-prefix">Question</p>
+            <h2 class="quizCounter heading-info">1/5</h2>
+          </div>
+          <div class="info-item">
+            <p class="info-prefix">Time Left</p>
+            <h3 class="timerCount heading-info">60</h3>
+          </div>
+        </div>
+        <h2 class="question">What is the answer to this question ?</h2>
+        <div class="option-container">
+          <p class="option-prefix">A</p>
+          <p class="option-text" data-number="1">Choice 1</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">B</p>
+          <p class="option-text" data-number="2">Choice 2</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">C</p>
+          <p class="option-text" data-number="3">Choice 3</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">D</p>
+          <p class="option-text" data-number="4">Choice 4</p>
+        </div>
+        <p class="answer-text">
+          Answer : <span class="selected-option"></span>
+        </p>
+      </div>
+    </div>
+    <script src="../app.js"></script>
+  </body>
+</html>
