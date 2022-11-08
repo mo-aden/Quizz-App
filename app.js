@@ -3,7 +3,6 @@ const options = document.querySelectorAll('.option-text');
 const selectedOptionText = document.querySelector('.selected-option');
 const quizCounterText = document.querySelector('.quizCounter');
 const timerText = document.querySelector('#timerCount');
-const scoresText = document.querySelector('.totalScores');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -59,6 +58,8 @@ function getNewQuestion() {
     questionCounter > questions.length ||
     timer == 0
   ) {
+    //store the scores in memory
+    localStorage.setItem('recentScore', score);
     //Go go end end page
     return window.location.assign('./endPage.html');
   }
@@ -117,6 +118,7 @@ options.forEach((option) => {
 function incrementScore(num) {
   score += num;
   console.log(score);
+  // scoresText.textContent = score;
 }
 
 //settime interval
@@ -129,3 +131,5 @@ setInterval(() => {
   }
 }, 1000);
 startQuizzes();
+
+console.log(score);
