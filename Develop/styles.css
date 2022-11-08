@@ -162,3 +162,27 @@ form {
   margin: 8px 0;
   cursor: pointer;
 }
+
+/* High score html page styling */
+.heading-highScore {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.scoreList {
+  list-style: none;
+  font-size: 1.8rem;
+  width: 100%;
+  margin-bottom: 4.8rem;
+}
+
+.scoreList li {
+  padding: 0.9rem 1.8rem;
+  background: #74c0fc;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.scoreList li:hover {
+  font-weight: 700;
+}
