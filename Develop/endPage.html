@@ -8,6 +8,24 @@
     <title>Document</title>
   </head>
   <body>
-    <h2>Hello from end page</h2>
+    <div class="container">
+      <h1 class="final-message">Congrats you're all done !!</h1>
+      <p class="score-text">
+        Your final score is <span class="totalScores"></span>
+      </p>
+      <form>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter your username ..."
+        />
+        <button type="submit" class="btn" id="saveScores">Submit</button>
+      </form>
+      <div class="game-cta">
+        <a href="#" class="btn btn--outline">View High scores</a>
+        <a href="./index.html" class="btn btn--full">Go home</a>
+      </div>
+    </div>
   </body>
 </html>

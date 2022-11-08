@@ -2,7 +2,8 @@ const question = document.querySelector('.question');
 const options = document.querySelectorAll('.option-text');
 const selectedOptionText = document.querySelector('.selected-option');
 const quizCounterText = document.querySelector('.quizCounter');
-const timerText = document.querySelector('.timerCount');
+const timerText = document.querySelector('#timerCount');
+const scoresText = document.querySelector('.totalScores');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -53,10 +54,15 @@ function startQuizzes() {
 }
 
 function getNewQuestion() {
-  if (availableQuestions.length === 0 || questionCounter > maxQuestions) {
+  if (
+    availableQuestions.length === 0 ||
+    questionCounter > questions.length ||
+    timer == 0
+  ) {
     //Go go end end page
-    return window.location.assign('./endPages.html');
+    return window.location.assign('./endPage.html');
   }
+
   questionCounter++;
   quizCounterText.textContent = `${questionCounter} / ${maxQuestions}`;
 
@@ -86,7 +92,7 @@ options.forEach((option) => {
     const selectedAnswer = selectedOption.dataset['number'];
     // console.log(selectedAnswer);
 
-    console.log(selectedAnswer == currentQuestion.answer);
+    // console.log(selectedAnswer == currentQuestion.answer);
 
     // selectedOption.parentElement.classList.add(styleSelectedOption);
 
@@ -101,6 +107,7 @@ options.forEach((option) => {
     //time to remove the CSS class
     setTimeout(() => {
       selectedOptionText.textContent = '';
+      timerText.textContent = timer--;
       getNewQuestion();
     }, 1000);
   });
@@ -111,4 +118,14 @@ function incrementScore(num) {
   score += num;
   console.log(score);
 }
+
+//settime interval
+setInterval(() => {
+  timer--;
+  if (timer >= 0) {
+    timerText.textContent = timer;
+  } else {
+    timerText.textContent = timer + 60;
+  }
+}, 1000);
 startQuizzes();
