@@ -11,6 +11,7 @@ let scoreBonus = 20;
 let questionCounter = 0;
 let availableQuestions = [];
 let timer = 60;
+const quizPoints = 10;
 
 let questions = [
   {
@@ -37,14 +38,27 @@ let questions = [
     option4: 'Push()',
     answer: 2,
   },
+  {
+    question: 'Which of the following is not a valid JavaScript variable name?',
+    option1: 'FirstAndLast',
+    option2: '_mamed_codes',
+    option3: '2names_data',
+    option4: 'None of the above',
+    answer: 3,
+  },
+  {
+    question: 'Inside which HTML element do we put the JavaScript?',
+    option1: '<javascript>',
+    option2: '<scripting>',
+    option3: '<js>',
+    option4: '<script>',
+    answer: 4,
+  },
 ];
 
 //
-const quizPoints = 10;
-const maxQuestions = 3;
 
 function startQuizzes() {
-  console.log(`Quizzes just started !`);
   questionCounter = 0;
   score: 0;
   availableQuestions = [...questions];
@@ -53,31 +67,30 @@ function startQuizzes() {
 }
 
 function getNewQuestion() {
-  if (
-    availableQuestions.length === 0 ||
-    questionCounter > questions.length ||
-    timer == 0
-  ) {
+  if (availableQuestions.length === 0 || questionCounter > questions.length || timer == 0) {
     //store the scores in memory
     localStorage.setItem('recentScore', score);
     //Go go end end page
     return window.location.assign('./endPage.html');
   }
 
+  //Update the DOM
   questionCounter++;
-  quizCounterText.textContent = `${questionCounter} / ${maxQuestions}`;
+  quizCounterText.textContent = `${questionCounter} / ${questions.length}`;
 
+  //Get the question that's displayed on screen
   const quizIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[quizIndex];
 
   question.textContent = currentQuestion.question;
 
-  //Options to be selected
+  //Options to be selected by the user
   options.forEach((option) => {
     const dataNumber = option.dataset['number'];
     option.textContent = currentQuestion['option' + dataNumber];
   });
 
+  //remove from the list questions that were displayed to the user
   availableQuestions.splice(quizIndex, 1);
 
   acceptingAnswers = true;
@@ -91,12 +104,8 @@ options.forEach((option) => {
     acceptingAnswers = false;
     const selectedOption = e.target;
     const selectedAnswer = selectedOption.dataset['number'];
-    // console.log(selectedAnswer);
 
-    // console.log(selectedAnswer == currentQuestion.answer);
-
-    // selectedOption.parentElement.classList.add(styleSelectedOption);
-
+    //Display to the user if they chose the correct answer
     if (selectedAnswer == currentQuestion.answer) {
       //   styleSelectedOption = 'correct';
       selectedOptionText.textContent = 'Correct Answer  ✅';
@@ -105,7 +114,7 @@ options.forEach((option) => {
       selectedOptionText.textContent = 'Wrong Answer  🟥';
     }
 
-    //time to remove the CSS class
+    //Remove the displayed message to user & take the user to the end page
     setTimeout(() => {
       selectedOptionText.textContent = '';
       timerText.textContent = timer--;
@@ -114,14 +123,12 @@ options.forEach((option) => {
   });
 });
 
-//Increase score
+//Increase score each time a user gets the correct answer
 function incrementScore(num) {
   score += num;
-  console.log(score);
-  // scoresText.textContent = score;
 }
 
-//settime interval
+//settime interval for the timer
 setInterval(() => {
   timer--;
   if (timer >= 0) {
@@ -130,6 +137,5 @@ setInterval(() => {
     timerText.textContent = timer + 60;
   }
 }, 1000);
-startQuizzes();
 
-console.log(score);
+startQuizzes();
