@@ -1,6 +1,31 @@
-# Quizz-App
+# Quick Quiz Application
 
-    <h4>This is a timed quiz challenge that is a beginner level.  </h4>
+    ### This is a timed quiz challenge that is a beginner level.
+
+    [Take the Quiz challenge now 🟩 ](
+    <a href="https://mo-aden.github.io/Quizz-App/Develop/">Click this link to start the game 🟩</a>
+     )
+
+     ### When the user clicks on the start quiz button, it will take them to the question page and the timer starts
+
+     ![Image of the first page](../Assets/pageOne.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <a href="https://mo-aden.github.io/Quizz-App/Develop/">Click this link to start the game 🟩</a>
     <img src="../Assets/pageOne.png" alt="A picture of the first page of the application">
     <h4>When the user clicks on the start quiz button, it will take them to the question page and the timer starts</h4>
