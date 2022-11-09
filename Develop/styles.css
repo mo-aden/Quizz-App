@@ -14,13 +14,13 @@ body {
   font-family: 'Rubik', sans-serif;
   text-align: center;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* This container is used all over the pages */
 .container {
   max-width: 80%;
-  margin: 20rem auto;
+  margin: 8rem auto;
   border: 0.1rem solid black;
   padding: 3.4rem;
   border-radius: 2rem;
